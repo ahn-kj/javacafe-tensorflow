@@ -16,5 +16,4 @@
 * pip install pillow
 * brew search imagick
 * brew install php{version}-imagick
-
 * pip install flask
