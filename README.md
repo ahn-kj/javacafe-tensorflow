@@ -8,3 +8,13 @@
 * resize-script.sh 로 파일 resize
 * convert-images-to-mnist-format.py 로 MNIST 생성됨.
 * 스크립트 실행한 디렉토리 에 생성됨 
+
+
+## Setting
+
+* brew install imagemagick
+* pip install pillow
+* brew search imagick
+* brew install php{version}-imagick
+
+* pip install flask
