@@ -22,3 +22,8 @@ chmod 755 ./mnist/resize-script.sh
 ```
 ## Run Sample
 
+## 오늘 해볼 것
+
+* 그림판에서 이미지 데이터 FLASK 로 전송 --> 현재는 로그만 찍음 --> Flask API 에서 특정경로에 파일저장
+
+* mnist 생성된 이미지로 텐서플로우 연동해보기
