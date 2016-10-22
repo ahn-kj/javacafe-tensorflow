@@ -12,8 +12,9 @@
 
 ## Setting
 
-* brew install imagemagick
-* pip install pillow
-* brew search imagick
-* brew install php{version}-imagick
-* pip install flask
+brew install imagemagick
+pip install pillow
+brew search imagick
+brew install php{version}-imagick
+pip install flask
+chmod 755 ./mnist/resize-script.sh
