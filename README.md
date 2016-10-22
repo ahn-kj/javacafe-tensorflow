@@ -10,10 +10,24 @@
 * 스크립트 실행한 디렉토리 에 생성됨 
 
 
-## Setting
+## Installation
 
-* brew install imagemagick
-* pip install pillow
-* brew search imagick
-* brew install php{version}-imagick
-* pip install flask
+```bash
+brew install imagemagick
+pip install pillow
+brew search imagick
+brew install php{version)-imagick
+pip install flask
+chmod 755 ./mnist/resize-script.sh
+```
+## Run Sample
+
+## 프로그램 동작 상상도
+
+![sequence](https://www.lucidchart.com/publicSegments/view/09820ea6-297f-47fa-8949-9045c7fe8e3f/image.png)
+
+## 오늘 해볼 것
+
+* 그림판에서 이미지 데이터 FLASK 로 전송 --> 현재는 로그만 찍음 --> Flask API 에서 특정경로에 파일저장
+
+* mnist 생성된 이미지로 텐서플로우 연동해보기
