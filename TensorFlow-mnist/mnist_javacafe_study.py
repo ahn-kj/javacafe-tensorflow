@@ -98,7 +98,7 @@ correct_val = np.zeros((1, 10))
 
 # we want to test our images which you saw at the top of this page
 # read the image
-gray = cv2.imread("blog/image.png", cv2.CV_LOAD_IMAGE_GRAYSCALE)
+gray = cv2.imread("blog/canvas.png", cv2.CV_LOAD_IMAGE_GRAYSCALE)
 
 # rescale it
 gray = cv2.resize(255-gray, (28, 28))
@@ -141,7 +141,7 @@ shifted = shift(gray,shiftx,shifty)
 gray = shifted
 
 # save the processed images
-cv2.imwrite("pro-img/image.png", gray)
+cv2.imwrite("pro-img/canvas.png", gray)
 """
 all images in the training set have an range from 0-1
 and not from 0-255 so we divide our flatten images
