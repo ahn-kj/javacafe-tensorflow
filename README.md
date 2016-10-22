@@ -10,13 +10,15 @@
 * 스크립트 실행한 디렉토리 에 생성됨 
 
 
-## Setting
+## Installation
 
 ```bash
 brew install imagemagick
 pip install pillow
 brew search imagick
-brew install php{version}-imagick
+brew install php{version)-imagick
 pip install flask
 chmod 755 ./mnist/resize-script.sh
 ```
+## Run Sample
+
