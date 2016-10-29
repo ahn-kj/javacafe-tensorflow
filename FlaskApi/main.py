@@ -67,11 +67,9 @@ def upload():
     print('New image created.')
 
     # os.system("sh ../mnist/resize-script.sh")
-
-
-    print("The image resized.")
     # return "Hello World!"
-    return os.system("sh ../TensorFlow-mnist/mnist_javacafe_study.py")
+    print os.system("python ../TensorFlow-mnist/mnist_javacafe_study.py")
+    return "11"
 
 @app.route("/test", methods=['GET', 'POST'])
 def test():

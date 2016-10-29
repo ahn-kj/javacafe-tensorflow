@@ -3,6 +3,8 @@ import input_data
 import cv2
 import numpy as np
 import math
+import json
+import ast
 from scipy import ndimage
 
 
@@ -89,7 +91,7 @@ We use the keys "images" and "labels" for x and y_
 """
 correct_prediction = tf.equal(tf.argmax(y,1), tf.argmax(y_,1))
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, "float"))
-print sess.run(accuracy, feed_dict={x: mnist.test.images, y_: mnist.test.labels})
+# print sess.run(accuracy, feed_dict={x: mnist.test.images, y_: mnist.test.labels})
 
 # create an an array where we can store our 1 pictures
 image = np.zeros((1, 784))
@@ -98,7 +100,7 @@ correct_val = np.zeros((1, 10))
 
 # we want to test our images which you saw at the top of this page
 # read the image
-gray = cv2.imread("blog/canvas.png", cv2.CV_LOAD_IMAGE_GRAYSCALE)
+gray = cv2.imread("../TensorFlow-mnist/blog/canvas.png", cv2.CV_LOAD_IMAGE_GRAYSCALE)
 
 # rescale it
 gray = cv2.resize(255-gray, (28, 28))
@@ -167,7 +169,14 @@ prediction = tf.argmax(y,1)
 we want to run the prediction and the accuracy function
 using our generated arrays (images and correct_vals)
 """
-print sess.run(prediction, feed_dict={x: image, y_: correct_val})
+# print sess.run(prediction, feed_dict={x: image, y_: correct_val})
 
-# print sess.run(accuracy, feed_dict={x: images, y_: correct_vals})
+accuracy_result = sess.run(accuracy, feed_dict={x: mnist.test.images, y_: mnist.test.labels})
+result = sess.run(prediction, feed_dict={x: image, y_: correct_val})
+
+data = {}
+data['accuracy'] = accuracy_result
+data['result'] = result
+
+print data
 
