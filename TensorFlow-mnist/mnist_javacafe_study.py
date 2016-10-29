@@ -168,5 +168,6 @@ we want to run the prediction and the accuracy function
 using our generated arrays (images and correct_vals)
 """
 print sess.run(prediction, feed_dict={x: image, y_: correct_val})
+
 # print sess.run(accuracy, feed_dict={x: images, y_: correct_vals})
 
