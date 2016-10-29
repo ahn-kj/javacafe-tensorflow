@@ -1,11 +1,13 @@
 from flask import Flask
+import flask
 import os
+import sys
 import base64
 
 from datetime import timedelta
 from flask import make_response, request, current_app
 from functools import update_wrapper
-
+from mnist_javacafe_study import *
 
 def crossdomain(origin=None, methods=None, headers=None,
                 max_age=21600, attach_to_all=True,
@@ -68,14 +70,17 @@ def upload():
 
     # os.system("sh ../mnist/resize-script.sh")
     # return "Hello World!"
-    print os.system("python ../TensorFlow-mnist/mnist_javacafe_study.py")
-    return "11"
+    # print os.system("python ./mnist_javacafe_study.py")
+    result = ocr()
+    print result
+    return flask.jsonify(**result)
+
+    # return "11"
 
 @app.route("/test", methods=['GET', 'POST'])
 def test():
 	return "" + os.system("./test.py")
 
 app.debug = True
-
 if __name__ == "__main__":
-	app.run()
+    app.run()
