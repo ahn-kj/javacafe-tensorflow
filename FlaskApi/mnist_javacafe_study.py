@@ -178,7 +178,7 @@ def ocr():
     using our generated arrays (images and correct_vals)
     """
 
-    accuracy_result = sess.run(accuracy, feed_dict={x: mnist.test.images, y_: mnist.test.labels})
+    accuracy_result = sess.run(accuracy, feed_dict={x: mnist.train.images, y_: mnist.train.labels})
     result = sess.run(prediction, feed_dict={x: image, y_: correct_val})
 
     data = {}

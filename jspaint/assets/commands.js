@@ -29,6 +29,7 @@ QuickSaveCommand.prototype.execute = function(){
 			success: function(o){
 				console.log('saved');
 				console.log(o);
+				alert("result: " + o.result + ", accuracy: " + o.accuracy);
 			}
 		});
 		setTimeout(function(){ AAMActivityIndicator.stop(); }, 200);
