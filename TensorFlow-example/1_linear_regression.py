@@ -11,19 +11,21 @@ Y = tf.placeholder(tf.float32)
 
 hypothesis = W * X + b
 
-cost = tf.reduce_mean(tf.square(hypothesis - Y))
+cost = tf.reduce_mean(tf.square(hypothesis - Y) + 1e-10)
 
-a = tf.Variable(0.1)
-optimizer = tf.train.GradientDescentOptimizer(a)
-train = optimizer.minimize(cost)
+learning_rate = 0.0008
+optimizer = tf.train.GradientDescentOptimizer(learning_rate).minimize(cost)
 
 init = tf.initialize_all_variables()
 
 sess = tf.Session()
 sess.run(init)
 
-for step in xrange(2001):
-    sess.run(train, feed_dict={X: x_data, Y: y_data})
+for step in xrange(2000):
+    sess.run(optimizer, feed_dict={X: x_data, Y: y_data})
 
     if step % 20 == 0:
         print step, sess.run(cost, feed_dict={X: x_data, Y: y_data}), sess.run(W), sess.run(b)
+
+print sess.run(hypothesis, feed_dict={X: 10})
+print sess.run(hypothesis, feed_dict={X: 20})
