@@ -37,12 +37,12 @@ sess.run(init)
 for step in xrange(20000):
     sess.run(optimizer, feed_dict={X: x_data, Y: y_data})
 
-    if step % 20 == 0:
+    if step % 100 == 0:
         print step, sess.run(cost, feed_dict={X: x_data, Y: y_data}), sess.run(W), sess.run(b)
 
 # ======== 학습된 우리의 프로그램에 예측 문의 ========
 
 # 10 시간 공부한 경우 토익점수 예측
-print "10시간:" + str(sess.run(hypothesis, feed_dict={X: 10})) + "점"
+print "10시간:" + str(sess.run(hypothesis, feed_dict={X: 10})) + " 점"
 # 40 시간 공부한 경우 토익점수 예측
-print "40시간:" + str(sess.run(hypothesis, feed_dict={X: 40})) + "점"
+print "40시간:" + str(sess.run(hypothesis, feed_dict={X: 40})) + " 점"
