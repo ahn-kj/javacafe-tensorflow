@@ -1,3 +1,5 @@
+#-*- coding: utf-8 -*-
+
 import tensorflow as tf
 
 x1_data = [54, 8, 30, 24, 46, 12, 20, 37, 40, 48]
